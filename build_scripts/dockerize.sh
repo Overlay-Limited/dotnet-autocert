@@ -8,7 +8,7 @@ ROOT_DIR=$SCRIPT_DIR/..
 VERSION=1.0.0
 IMAGE_NAME=dotnet-autocert
 
-docker build --no-cache=true -t $IMAGE_NAME:$VERSION "$ROOT_DIR"
+docker build -t $IMAGE_NAME:$VERSION "$ROOT_DIR"
 docker save -o $IMAGE_NAME-$VERSION.tar $IMAGE_NAME:$VERSION
 
 zip $IMAGE_NAME-docker.zip $IMAGE_NAME-$VERSION.tar
